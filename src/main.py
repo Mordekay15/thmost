@@ -15,8 +15,8 @@ def call_llm(prompt: str, model: str = "legacy") -> str:
         stderr=subprocess.PIPE,
     )
     if result.returncode != 0:
-        print("⚠️ Error:", result.stderr.decode())
-        return "⚠️ LLM call failed."
+        print("Error:", result.stderr.decode())
+        return "LLM call failed."
 
     return result.stdout.decode()
 
@@ -34,10 +34,10 @@ def generate_doc(input_path: Path, output_path: Path, model: str):
 
     doc_parts = []
     for i, chunk in enumerate(chunks):
-        prompt = f"""Explain the following legacy code (COBOL or HLASM) in **Markdown** format. 
+        prompt = f"""Explain the following legacy code (COBOL) in **Markdown** format. 
                 Use headings, bullet points, and summarize its logic and purpose clearly: {chunk}"""
 
-        print(f"🧠 Sending chunk {i+1} to LLM...")
+        print(f"Sending chunk {i+1} to LLM...")
         markdown = call_llm(prompt, model)
         doc_parts.append(f"## Block {i+1}\n{markdown.strip()}\n")
 
@@ -47,8 +47,8 @@ def generate_doc(input_path: Path, output_path: Path, model: str):
     print(f"\n✅ Documentation saved to {output_path}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate markdown documentation from legacy COBOL/HLASM code using Ollama.")
-    parser.add_argument("input", type=Path, help="Path to COBOL/HLASM code file.")
+    parser = argparse.ArgumentParser(description="Generate markdown documentation from legacy COBOL code")
+    parser.add_argument("input", type=Path, help="Path to COBOL code file.")
     parser.add_argument("-o", "--output", type=Path, default="output.md", help="Path to output .md file.")
     parser.add_argument("-m", "--model", type=str, default="legacy", help="Ollama model name (legacy - promted deepseek-r1).")
     args = parser.parse_args()
