@@ -1,8 +1,8 @@
-#THMOST
+# THMOST
 
 Tool that helps to maintain or raplace COBOL legacy systems. Fully automated approach with locally working LLM.
 
-##How to Use
+## How to Use
 0. Make sure that you have [python3](https://www.python.org/downloads/) and [Ollama](https://ollama.com/download).
 1. Download and start a deepseek-r1 (can use any model)
 ```bash
@@ -22,6 +22,6 @@ python main.py path/to/code -o <output_dir> -m <model> --recursive
 | `--max-chars`       | Maximum characters per chunk (default: 3000)             |
 
 
-##License - MIT
+## License - MIT
 
 
