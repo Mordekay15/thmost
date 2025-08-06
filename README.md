@@ -22,6 +22,7 @@ python main.py path/to/code -o <output_dir> -m <model> --recursive
 | `--max-chars`       | Maximum characters per chunk (default: 3000)             |
 
 
-## License - MIT
+## License
+MIT
 
 
