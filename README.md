@@ -21,6 +21,8 @@ python main.py path/to/code -o <output_dir> -m <model> --recursive
 | `-r`, `--recursive` | Recursively process all `.cbl` files in subdirectories   |
 | `--max-chars`       | Maximum characters per chunk (default: 3000)             |
 
+## Recommendations
+Make sure that your RAM is 32 GB
 
 ## License
 MIT
