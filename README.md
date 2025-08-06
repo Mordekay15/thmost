@@ -1,6 +1,6 @@
 # THMOST
 
-Tool that helps to maintain or raplace COBOL legacy systems. Fully automated approach with locally working LLM.
+Tool that helps to maintain or replace legacy systems. Fully automated approach with locally working LLM.
 
 ## How to Use
 0. Make sure that you have [python3](https://www.python.org/downloads/) and [Ollama](https://ollama.com/download).
